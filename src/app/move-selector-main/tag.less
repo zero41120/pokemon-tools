@@ -1,0 +1,32 @@
+.type-tag {
+  width: 6em;
+  height: 2em;
+  line-height: 2em;
+  border-radius: 15px;
+
+  user-select: none;
+  cursor: pointer;
+
+  display: grid;
+  grid-template-areas: 'dot tag';
+  grid-template-columns: 1.5em 1fr;
+
+  -webkit-box-shadow: 0 7px 7px -6px #777;
+	-moz-box-shadow: 0 7px 7px -6px #777;
+  box-shadow: 0 7px 7px -6px #777;
+}
+
+.type-text {
+  color: white;
+  grid-area: tag;
+  text-align: left;
+}
+
+.type-selected {
+  height: 1em;
+  width: 1em;
+  margin: auto;
+  line-height: 2em;
+  border-radius: 50%;
+  grid-area: dot;
+}

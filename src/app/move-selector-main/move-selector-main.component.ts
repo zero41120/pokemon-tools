@@ -7,6 +7,8 @@ import { types } from '../types/poketypes';
   styleUrls: [
     './move-selector-main.component.less',
     './type-selector.less',
+    './tag.less',
+    './strengths-result.less'
   ]
 })
 export class MoveSelectorMainComponent {

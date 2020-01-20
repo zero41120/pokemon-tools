@@ -1,13 +1,20 @@
-<div class="type-selector">
-  <div
-    class="type-tag"
-    *ngFor="let type of getTypes()"
-    [ngStyle]="{'background': getColor(type)}"
-    (click)="toggleSelect(type)">
+<div class="move-main">
+  <div class="type-selector">
     <div
-      class="type-selected"
-      [ngStyle]="{'background': getSelectedDotColor(type)}"
-    ></div>
-    <div class="type-text">{{type.name}}</div>
+      class="type-tag"
+      *ngFor="let type of getTypes()"
+      [ngStyle]="{'background': getColor(type)}"
+      (click)="toggleSelect(type)">
+      <div
+        class="type-selected"
+        [ngStyle]="{'background': getSelectedDotColor(type)}"
+      ></div>
+      <div class="type-text">{{type.name}}</div>
+    </div>
+  </div>
+
+  <div class="strengths-result">
+
+
   </div>
 </div>
