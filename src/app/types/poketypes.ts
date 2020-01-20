@@ -1,4 +1,7 @@
-export const types = [{
+const types = [
+  {
+    selected: false,
+    chinese: '普',
     name: 'Normal',
     colorCode: '#9199a1',
     accentCode: '#4b4e51',
@@ -7,6 +10,8 @@ export const types = [{
     strengths: []
   },
   {
+    selected: false,
+    chinese: '火',
     name: 'Fire',
     colorCode: '#fe9c54',
     accentCode: '#5f4f44',
@@ -15,6 +20,8 @@ export const types = [{
     strengths: ['Grass', 'Ice', 'Bug', 'Steel']
   },
   {
+    selected: false,
+    chinese: '水',
     name: 'Water',
     colorCode: '#4f90d5',
     accentCode: '#404d59',
@@ -23,6 +30,8 @@ export const types = [{
     strengths: ['Fire', 'Ground', 'Rock']
   },
   {
+    selected: false,
+    chinese: '電',
     name: 'Electric',
     colorCode: '#f4d23c',
     accentCode: '#5c5940',
@@ -31,6 +40,8 @@ export const types = [{
     strengths: ['Water', 'Flying']
   },
   {
+    selected: false,
+    chinese: '草',
     name: 'Grass',
     colorCode: '#62bb5a',
     accentCode: '#445447',
@@ -39,6 +50,8 @@ export const types = [{
     strengths: ['Water', 'Ground', 'Rock']
   },
   {
+    selected: false,
+    chinese: '冰',
     name: 'Ice',
     colorCode: '#73cebf',
     accentCode: '#475757',
@@ -47,6 +60,8 @@ export const types = [{
     strengths: ['Grass', 'Ground', 'Flying', 'Dragon']
   },
   {
+    selected: false,
+    chinese: '格',
     name: 'Fighting',
     colorCode: '#cd406a',
     accentCode: '#57404a',
@@ -55,6 +70,8 @@ export const types = [{
     strengths: ['Normal', 'Ice', 'Rock', 'Dark', 'Steel']
   },
   {
+    selected: false,
+    chinese: '毒',
     name: 'Poison',
     colorCode: '#a96ac7',
     accentCode: '#524857',
@@ -63,6 +80,8 @@ export const types = [{
     strengths: ['Grass', 'Fairy']
   },
   {
+    selected: false,
+    chinese: '地',
     name: 'Ground',
     colorCode: '#d87844',
     accentCode: '#594940',
@@ -71,6 +90,8 @@ export const types = [{
     strengths: ['Fire', 'Electric', 'Poison', 'Rock', 'Steel']
   },
   {
+    selected: false,
+    chinese: '飛',
     name: 'Flying',
     colorCode: '#8ea8de',
     accentCode: '#4c515a',
@@ -79,6 +100,8 @@ export const types = [{
     strengths: ['Grass', 'Fighting', 'Bug']
   },
   {
+    selected: false,
+    chinese: '超',
     name: 'Psychic',
     colorCode: '#f97178',
     accentCode: '#5d4849',
@@ -87,6 +110,8 @@ export const types = [{
     strengths: ['Fighting', 'Poison']
   },
   {
+    selected: false,
+    chinese: '蟲',
     name: 'Bug',
     colorCode: '#91bf2e',
     accentCode: '#4c543f',
@@ -95,6 +120,8 @@ export const types = [{
     strengths: ['Grass', 'Psychic', 'Dark']
   },
   {
+    selected: false,
+    chinese: '岩',
     name: 'Rock',
     colorCode: '#c5b78b',
     accentCode: '#57544f',
@@ -103,6 +130,8 @@ export const types = [{
     strengths: ['Fire', 'Ice', 'Flying', 'Bug']
   },
   {
+    selected: false,
+    chinese: '幽',
     name: 'Ghost',
     colorCode: '#5269ac',
     accentCode: '#404751',
@@ -111,6 +140,8 @@ export const types = [{
     strengths: ['Psychic', 'Ghost']
   },
   {
+    selected: false,
+    chinese: '龍',
     name: 'Dragon',
     colorCode: '#0a6dc2',
     accentCode: '#364857',
@@ -119,6 +150,8 @@ export const types = [{
     strengths: ['Dragon']
   },
   {
+    selected: false,
+    chinese: '惡',
     name: 'Dark',
     colorCode: '#5a5365',
     accentCode: '#434349',
@@ -127,6 +160,8 @@ export const types = [{
     strengths: ['Psychic', 'Ghost']
   },
   {
+    selected: false,
+    chinese: '鋼',
     name: 'Steel',
     colorCode: '#5a8da1',
     accentCode: '#444c51',
@@ -135,6 +170,8 @@ export const types = [{
     strengths: ['Ice', 'Rock', 'Fairy']
   },
   {
+    selected: false,
+    chinese: '妖',
     name: 'Fairy',
     colorCode: '#eb8fe6',
     accentCode: '#5d4e5d',
@@ -143,3 +180,17 @@ export const types = [{
     strengths: ['Fighting', 'Dragon', 'Dark']
   }
 ];
+(window as any).poketypes = types;
+
+interface PokeType {
+  selected: boolean;
+  chinese: string;
+  name: string;
+  colorCode: string;
+  accentCode: string;
+  immunes: string[];
+  weaknesses: string[];
+  strengths: string[];
+}
+export { types, PokeType};
+
