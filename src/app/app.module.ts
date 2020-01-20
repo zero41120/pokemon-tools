@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MoveSelectorMainComponent } from './move-selector-main/move-selector-main.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MoveSelectorMainComponent
   ],
   imports: [
     BrowserModule,
