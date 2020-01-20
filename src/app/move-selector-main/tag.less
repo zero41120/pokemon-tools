@@ -1,5 +1,5 @@
 .type-tag {
-  width: 6em;
+  width: 4.5em;
   height: 2em;
   line-height: 2em;
   border-radius: 15px;
@@ -9,11 +9,16 @@
 
   display: grid;
   grid-template-areas: 'dot tag';
-  grid-template-columns: 1.5em 1fr;
+  grid-template-columns: 2em 1fr;
 
   -webkit-box-shadow: 0 7px 7px -6px #777;
 	-moz-box-shadow: 0 7px 7px -6px #777;
   box-shadow: 0 7px 7px -6px #777;
+
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  transform: translateZ(0);
 }
 
 .type-text {

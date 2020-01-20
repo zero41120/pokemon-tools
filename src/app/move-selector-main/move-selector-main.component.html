@@ -1,20 +1,46 @@
 <div class="move-main">
-  <div class="type-selector">
-    <div
-      class="type-tag"
-      *ngFor="let type of getTypes()"
-      [ngStyle]="{'background': getColor(type)}"
-      (click)="toggleSelect(type)">
-      <div
-        class="type-selected"
-        [ngStyle]="{'background': getSelectedDotColor(type)}"
-      ></div>
-      <div class="type-text">{{type.name}}</div>
+  <div class="card-wrap">
+    <div class="card-header">選擇招式屬性</div>
+    <div class="type-selector">
+      <div class="type-tag" *ngFor="let type of getTypes()" [ngStyle]="{'background': getColor(type)}"
+        (click)="toggleSelect(type)">
+        <div class="type-selected" [ngStyle]="{'background': getSelectedDotColor(type)}"></div>
+        <div class="type-text">{{type.chinese}}</div>
+      </div>
+      <div class="type-tag reset unset-grid" (click)="resetTypes()">
+        <div class="type-text">重置</div>
+      </div>
     </div>
   </div>
 
-  <div class="strengths-result">
-
-
+  <div class="card-wrap">
+    <div class="card-header">一招傷害2倍屬性</div>
+    <div class="strengths-result">
+      <div class="type-tag unset-grid" *ngFor="let type of getStrengthTypes()"
+        [ngStyle]="{'background': getColor(type)}">
+        <div class="type-text">{{type.chinese}}</div>
+      </div>
+    </div>
   </div>
+
+  <div class="card-wrap">
+    <div class="card-header">一招傷害½倍屬性</div>
+    <div class="weaknesses-result">
+      <div class="type-tag unset-grid" *ngFor="let type of getWeaknessTypes()"
+        [ngStyle]="{'background': getColor(type)}">
+        <div class="type-text">{{type.chinese}}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-wrap">
+    <div class="card-header">一招傷害無效屬性</div>
+    <div class="immunes-result">
+      <div class="type-tag unset-grid" *ngFor="let type of getImmunesTypes()"
+        [ngStyle]="{'background': getColor(type)}">
+        <div class="type-text">{{type.chinese}}</div>
+      </div>
+    </div>
+  </div>
+
 </div>

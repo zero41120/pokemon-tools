@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { types } from '../types/poketypes';
+import { types, PokeType } from '../types/poketypes';
 
 @Component({
   selector: 'app-move-selector-main',
@@ -8,7 +8,6 @@ import { types } from '../types/poketypes';
     './move-selector-main.component.less',
     './type-selector.less',
     './tag.less',
-    './strengths-result.less'
   ]
 })
 export class MoveSelectorMainComponent {
@@ -16,6 +15,11 @@ export class MoveSelectorMainComponent {
 
   public getTypes() {
     return types;
+  }
+
+  private getTypeHashTable() {
+    return this.getTypes()
+      .reduce((a, c: PokeType) => { a[c.name] = c; return a} , {});
   }
 
   public getColor(type) {
@@ -28,5 +32,32 @@ export class MoveSelectorMainComponent {
 
   public toggleSelect(type) {
     type.selected = !type.selected;
+  }
+
+  private getSelectedTypes() {
+    return this.getTypes().filter(type => type.selected);
+  }
+
+  private filterTypeProperty(propName: string, types = this.getSelectedTypes()) {
+    const allFilteredName = Array.from(new Set(
+      types
+        .map(type => type[propName])
+        .flat()
+    ));
+    const ht = this.getTypeHashTable();
+    return allFilteredName.map(name => ht[name]);
+  }
+  public getStrengthTypes() {
+    return this.filterTypeProperty('strengths');
+  }
+  public getWeaknessTypes() {
+    return this.filterTypeProperty('weaknesses');
+  }
+  public getImmunesTypes() {
+    return this.filterTypeProperty('immunes');
+  }
+
+  public resetTypes() {
+    this.getTypes().forEach(t => t.selected = false);
   }
 }
