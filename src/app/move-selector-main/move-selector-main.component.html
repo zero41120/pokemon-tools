@@ -1,6 +1,6 @@
 <div class="move-main">
   <div class="card-wrap">
-    <div class="card-header">選擇招式屬性</div>
+    <div class="card-header">👍</div>
     <div class="type-selector">
       <div class="type-tag" *ngFor="let type of getTypes()" [ngStyle]="{'background': getColor(type)}"
         (click)="toggleSelect(type)">
@@ -14,33 +14,54 @@
   </div>
 
   <div class="card-wrap">
-    <div class="card-header">一招傷害2倍屬性</div>
-    <div class="strengths-result">
-      <div class="type-tag unset-grid" *ngFor="let type of getStrengthTypes()"
-        [ngStyle]="{'background': getColor(type)}">
-        <div class="type-text">{{type.chinese}}</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="card-wrap">
-    <div class="card-header">一招傷害½倍屬性</div>
+    <div class="card-header">🔮</div>
     <div class="weaknesses-result">
-      <div class="type-tag unset-grid" *ngFor="let type of getWeaknessTypes()"
-        [ngStyle]="{'background': getColor(type)}">
-        <div class="type-text">{{type.chinese}}</div>
+      <div class="type-tag unset-grid" *ngFor="let type of getTypes()"
+        [ngStyle]="{'background': getEffectiveColor(type)}">
+        <div class="type-text">{{type.chinese}}x{{getEffectiveMultiplier(type)}}</div>
+      </div>
+      <div class="type-tag reset unset-grid" (click)="resetTypes()">
+        <div class="type-text">重置</div>
       </div>
     </div>
   </div>
 
   <div class="card-wrap">
-    <div class="card-header">一招傷害無效屬性</div>
-    <div class="immunes-result">
-      <div class="type-tag unset-grid" *ngFor="let type of getImmunesTypes()"
-        [ngStyle]="{'background': getColor(type)}">
+    <div class="card-header">🗡️</div>
+    <div class="strengths-result">
+      <div class="type-tag unset-grid" *ngFor="let type of getTypes()"
+        [ngStyle]="{'background': getColor(type, getStrengthTypes())}">
         <div class="type-text">{{type.chinese}}</div>
+      </div>
+      <div class="type-tag reset unset-grid" (click)="resetTypes()">
+        <div class="type-text">重置</div>
       </div>
     </div>
   </div>
 
+  <div class="card-wrap">
+    <div class="card-header">🥄</div>
+    <div class="weaknesses-result">
+      <div class="type-tag unset-grid" *ngFor="let type of getTypes()"
+        [ngStyle]="{'background': getColor(type, getWeaknessTypes())}">
+        <div class="type-text">{{type.chinese}}</div>
+      </div>
+      <div class="type-tag reset unset-grid" (click)="resetTypes()">
+        <div class="type-text">重置</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-wrap">
+    <div class="card-header">👻</div>
+    <div class="immunes-result">
+      <div class="type-tag unset-grid" *ngFor="let type of getTypes()"
+        [ngStyle]="{'background': getColor(type, getImmunesTypes())}">
+        <div class="type-text">{{type.chinese}}</div>
+      </div>
+      <div class="type-tag reset unset-grid" (click)="resetTypes()">
+        <div class="type-text">重置</div>
+      </div>
+    </div>
+  </div>
 </div>
